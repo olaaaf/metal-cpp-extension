@@ -22,8 +22,8 @@
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#include "../Metal/MTLDrawable.hpp"
-#include "../Metal/MTLTexture.hpp"
+#include <Metal/MTLDrawable.hpp>
+#include <Metal/MTLTexture.hpp>
 
 #include "CADefines.hpp"
 #include "CAPrivate.hpp"

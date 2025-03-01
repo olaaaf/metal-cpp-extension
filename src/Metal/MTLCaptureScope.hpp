@@ -25,8 +25,8 @@
 #include "MTLDefines.hpp"
 #include "MTLPrivate.hpp"
 
-#include "../Foundation/NSObject.hpp"
-#include "../Foundation/NSString.hpp"
+#include <Foundation/NSObject.hpp>
+#include <Foundation/NSString.hpp>
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 

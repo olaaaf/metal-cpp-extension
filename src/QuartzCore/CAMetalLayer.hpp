@@ -22,8 +22,8 @@
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#include "../Metal/MTLPixelFormat.hpp"
-#include "../Metal/MTLTexture.hpp"
+#include <Metal/MTLPixelFormat.hpp>
+#include <Metal/MTLTexture.hpp>
 #include <CoreGraphics/CGGeometry.h>
 
 #include "CADefines.hpp"

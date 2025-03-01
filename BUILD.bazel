@@ -1,0 +1,45 @@
+
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "foundation",
+    hdrs = glob(["src/Foundation/*.hpp"]),
+    linkopts = ["-framework", "Foundation", "-Objc"],
+    strip_include_prefix = "src",
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "appkit",
+    hdrs = glob(["src/AppKit/*.hpp"]),
+    linkopts = ["-framework", "CoreGraphics", "-Objc"],
+    strip_include_prefix = "src",
+    visibility = ["//visibility:public"],
+    deps = [":foundation"],
+)
+
+cc_library(
+    name = "metalkit",
+    hdrs = glob(["src/MetalKit/*.hpp"]),
+    linkopts = ["-framework", "CoreGraphics", "-Objc"],
+    strip_include_prefix = "src",
+    visibility = ["//visibility:public"],
+    deps = [":appkit", ":metal", ":quartz"],
+)
+
+cc_library(
+    name = "metal",
+    hdrs = glob(["src/Metal/*.hpp"]),
+    linkopts = ["-framework", "Metal", "-Objc"],
+    strip_include_prefix = "src",
+    visibility = ["//visibility:public"],
+    deps = [":foundation", ":quartz"],
+)
+
+cc_library(
+    name = "quartz",
+    linkopts = ["-framework", "Quartz", "-Objc"],
+    hdrs = glob(["src/QuartzCore/*.hpp"]),
+    strip_include_prefix = "src",
+    visibility = ["//visibility:public"],
+)

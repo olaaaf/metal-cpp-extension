@@ -27,7 +27,7 @@
 #include "MTLResource.hpp"
 #include "MTLStageInputOutputDescriptor.hpp"
 
-#include "../Foundation/NSRange.hpp"
+#include <Foundation/NSRange.hpp>
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
