@@ -1,7 +1,44 @@
 ## About
 
+This is a bazel fork for metal-cpp.
+
 **metal-cpp** is a low overhead and header only C++ interface for Metal that helps developers add Metal functionality to graphics applications that are written in C++ (such as game engines). **metal-cpp** removes the need to create a shim and allows developers to call Metal functions directly from anywhere in their existing C++ code.
 
+## Usage
+
+Add this to `MODULE.bazel`:
+
+```
+bazel_dep(name = "metal", dev_dependency = True)
+git_override(
+    module_name = "metal",
+    commit = "b561d2ef90e4a2fa4570bcfcb93857e8b46e3bcb",
+    remote = "https://github.com/olaaaf/metal-cpp-extension.git",
+)
+```
+
+When compiling just add to deps: 
+
+```
+cc_binary(
+    name = "test",
+    srcs = ["test.cpp"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@metal",
+        "@metal//:appkit",
+        "@metal//:metalkit",
+    ],
+)
+```
+
+Available targets:
+
+- `@metal//:metal`
+- `@metal//:appkit`
+- `@metal//:metalkit`
+- `@metal//:foundation`
+- `@metal//:quartz`
 
 ## Highlights
 
